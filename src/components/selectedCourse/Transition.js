@@ -4,8 +4,11 @@ import './transitionStyle.css'
 function Transition() {
   return (
     <div id='groundElement'>
-            <h1 id='t1'>Now you are leaving <span>CourseMap</span></h1>
-            <h3>You would be redirected to <span>eDX</span></h3>
+            <h1 id='t1'>Now you are leaving <span id='courseMapTitle'>CourseMap</span></h1>
+            <h3 id='t2'>You would be redirected to <span id='targetPage'>eDX</span></h3>
+            <div class="progress-loader">
+                <div class="progress"></div>
+            </div>
         	<svg id='svgNavigator' class="pl" viewBox="0 0 160 160" width="160px" height="160px" xmlns="http://www.w3.org/2000/svg">
 			<defs>
 				<linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">

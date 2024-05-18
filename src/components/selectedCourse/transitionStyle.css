@@ -5,6 +5,19 @@
 
 #t1 {
     padding-top: 90px;
+    color: aliceblue;
+}
+
+#courseMapTitle {
+    color: rgb(188, 216, 240);
+}
+
+#t2 {
+    color: aliceblue;
+}
+
+#targetPage {
+    color: rgb(111, 186, 197);
 }
 
 #svgNavigator {
@@ -123,6 +136,55 @@
     14%,
       36% {
       stroke-dashoffset: 0;
+    }
+  }
+
+
+  /* -------------------------------------- Progress Bar -------------------------------------- */
+
+  .progress-loader {
+    top: 30%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+  
+  .progress-loader {
+    width: 150px;
+    background: rgba(236, 236, 238, 0.253);
+    height: 3px;
+    border-radius: 7px;
+  }
+  
+  .progress {
+    content: '';
+    width: 1px;
+    height: 3px;
+    border-radius: 7px;
+    background: rgb(255, 255, 255);
+    transition: 0.5s;
+    animation: loading1274 4s ease infinite;
+  }
+  
+  @keyframes loading1274 {
+    0% {
+      width: 0%;
+    }
+  
+    10% {
+      width: 10%;
+    }
+  
+    50% {
+      width: 40%;
+    }
+  
+    60% {
+      width: 60%;
+    }
+  
+    100% {
+      width: 100%;
     }
   }
   
