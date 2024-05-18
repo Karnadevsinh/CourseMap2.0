@@ -1,0 +1,160 @@
+#parentDiv {
+    background: lavender;
+    height: 940px;
+}
+
+#divider {
+    width: 1px;
+    height: 830px;
+    border: 1px;
+    border-style: dashed;
+    padding: 0px;
+    margin-top: 70px;
+}
+
+#cardStyle {
+    height: 200px;
+    width: 500px;
+    background: #0000ff1d;
+    margin-top: 40px;
+    margin-left: -350px;
+    border-radius: 7px;
+}
+
+#courseDesc {
+    margin-top: 130px;
+    margin-left: -775px;
+    font-family: American Typewriter;
+}
+
+#testimonials {
+    margin-top: 30px;
+    margin-left: -840px;
+    margin-bottom: 27px;
+    font-family: American Typewriter;
+}
+
+.swiper {
+    width: 500px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-left: -180px;
+}
+
+.swiper-slide {
+    /* background-position: center;
+    background-size: cover; */
+    /* width: 500px;
+    height: 300px; */
+    width: 250px;
+    height: 200px;
+    filter: blur(5px);
+}
+
+.swiper-slide-active {
+    filter: blur(0px);
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+.swiper-3d {
+    perspective: 400px !important;
+    margin-left: -200px;
+    width: 200px;
+}
+
+.swiper-container {
+    width: 300px;
+}
+
+
+/* CARD */
+
+.cardReview {
+    width: 250px;
+    height: 200px;
+    border-radius: 15px;
+    background: rgb(195, 157, 233);
+    display: -webkit-inline-flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cardReview::before {
+    content: "";
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: -40%;
+    left: -20%;
+    border-radius: 50%;
+    border: 35px solid rgba(255, 255, 255, 0.102);
+    transition: all .8s ease;
+    filter: blur(.5rem);
+  }
+  
+  .text {
+    flex-grow: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    font-weight: 900;
+    font-size: 1.2em;
+  }
+  
+  .subtitle {
+    font-size: .6em;
+    font-weight: 300;
+    color: rgba(240, 248, 255, 0.691);
+  }
+  
+  .icons {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 250px;
+    border-radius: 0px 0px 15px 15px;
+    overflow: hidden;
+  }
+  
+  .btn {
+    border: none;
+    width: 84px;
+    height: 35px;
+    background-color: rgba(247, 234, 234, 0.589);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px;
+  }
+  
+  .svg-icon {
+    width: 25px;
+    height: 25px;
+    stroke: rgb(38, 59, 126);
+  }
+  
+  .btn:hover {
+    background-color: rgb(247, 234, 234);
+  }
+  
+  .cardReview:hover::before {
+    width: 140px;
+    height: 140px;
+    top: -30%;
+    left: 50%;
+    filter: blur(0rem);
+  }
+
+/* Review Button */
+
+#reviewButton {
+    width: 300px;
+    margin-top: -390px;
+    margin-left: 30px;
+}

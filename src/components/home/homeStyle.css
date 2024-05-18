@@ -1,0 +1,102 @@
+#parent {
+    background-color: black;
+}
+
+#sec1 {
+    background-color: black;
+    min-height: 849px;
+}
+
+#titleName {
+    font-size: 10vmin;
+    font-weight: 90;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: repeating-linear-gradient(
+    35deg,
+    hsl(197, 100%, 50%) 0px 2px,
+    hsl(77, 100%, 50%) 0px 4px
+    /* hsl(197, 100%, 50%) 0px 2px,
+    hsl(77, 100%, 50%) 0px 4px */
+  );
+
+  mix-blend-mode: multiply;
+  animation: none 40000ms infinite linear;
+}
+
+#vid {
+    margin-top: -297px;
+    width: 544px;
+    height: 370px;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+}
+
+#sec2 {
+    background-color: aliceblue;
+    height: 400px;
+}
+
+.tick {
+    height: 50px;
+    width: 50px;
+}
+
+.listText {
+    font-size: '18px';
+    font-family: "serif";
+    font-weight: "bold";
+}
+
+#sec3 {
+    background-color: cornflowerblue;
+    height: 800px;
+}
+
+.statCard {
+    width: 18rem;
+    margin: 20px;
+    margin-top: 50px;
+    height: 110px;
+    background-color: lightskyblue;
+}
+
+#caro {
+    margin-top: 50px;
+}
+
+.caroImg {
+    width: 900px;
+    margin-left: 260px;
+}
+
+#sec4 {
+    height: 1200px;
+    background-color:rgb(18, 15, 36);
+}
+
+.domains {
+    margin: 20px;
+    margin-top: 70px;
+    background-color: rgb(202, 222, 239);
+    padding: 0px;
+}
+
+.imgDomain {
+    height: 270px;
+}
+
+#sec5 {
+    height: 130px;
+    background-color: rgb(0, 147, 205);
+}
+
+#mq {
+    padding-top: 20px;
+}
+
+.mqLogo {
+    height: 40px;
+    margin-right: 70px;
+}

@@ -1,0 +1,21 @@
+#signUp{
+    margin-right: 20px;
+}
+
+#btnLogin {
+    margin-left: 10px;
+}
+
+#navBar {
+    background-color: rgba(255, 255, 255, 0.573); /* Set background color to transparent */
+    position: fixed; /* Fixed position so it stays at the top */
+    width: 100%; /* Full width */
+    top: 0; /* Align to the top */
+    z-index: 1000; /* Ensure it's above other content */
+    padding: 10px 0; /* Add some padding for better visibility */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+#motionDiv {
+    background-image: url("../../assets/noise.png");
+}
