@@ -8,6 +8,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import "./navbarStyle.css"
 import IconButton from '@mui/material/IconButton';
 import Fingerprint from '@mui/icons-material/Fingerprint';
+import { Link } from 'react-router-dom';
 
 
 function Navbaar() {
@@ -39,24 +40,26 @@ function Navbaar() {
                         </NavDropdown>
                     </Nav>
                     <Form className="d-flex">
-                        <button
-                            className={`
-                                px-2.5 py-1 rounded-full 
-                                flex items-center gap-2 
-                                text-slate-500
-                                shadow-[-2px_-2px_5px_rgba(255,_255,_255,_0.8),_2px_2px_5px_rgba(0,_0,_0,_0.25)]
-                                
-                                transition-all
+                        <Link to="/signUp">
+                            <button
+                                className={`
+                                    px-2.5 py-1 rounded-full 
+                                    flex items-center gap-2 
+                                    text-slate-500
+                                    shadow-[-2px_-2px_5px_rgba(255,_255,_255,_0.8),_2px_2px_5px_rgba(0,_0,_0,_0.25)]
+                                    
+                                    transition-all
 
-                                hover:shadow-[-1px_-1px_5px_rgba(255,_255,_255,_0.6),_1px_1px_5px_rgba(0,_0,_0,_0.3),inset_-2px_-2px_5px_rgba(255,_255,_255,_1),inset_2px_2px_4px_rgba(0,_0,_0,_0.3)]
-                                hover:text-violet-500
-                            `}
-                            >
-                                <IconButton aria-label="fingerprint" color="secondary">
-                                    <Fingerprint />
-                                </IconButton>
-                                <span style={{marginLeft: "-10px"}}>Sign-Up</span>
-                        </button>
+                                    hover:shadow-[-1px_-1px_5px_rgba(255,_255,_255,_0.6),_1px_1px_5px_rgba(0,_0,_0,_0.3),inset_-2px_-2px_5px_rgba(255,_255,_255,_1),inset_2px_2px_4px_rgba(0,_0,_0,_0.3)]
+                                    hover:text-violet-500
+                                `}
+                                >
+                                    <IconButton aria-label="fingerprint" color="secondary">
+                                        <Fingerprint />
+                                    </IconButton>
+                                    <span style={{marginLeft: "-10px"}}>Sign-Up</span>
+                            </button>
+                        </Link>
 
                         <button
                             id='btnLogin'

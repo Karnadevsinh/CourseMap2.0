@@ -13,6 +13,7 @@ import Marquee from "react-fast-marquee";
 
 import "./homeStyle.css"
 import DottedButton from './DottedButton';
+import { HoverImageLinks } from './HoverImageLinks';
 
 function Home() {
 
@@ -254,6 +255,10 @@ function Home() {
                     </Carousel.Item>
                 </Carousel>
             </div>
+        </section>
+
+        <section>
+            <HoverImageLinks />
         </section>
 
         <section id='sec4'>

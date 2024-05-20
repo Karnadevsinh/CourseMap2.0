@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import './terminalStyle.css'
 import ButtonEncrypt from './ButtonEncrypt';
 import styles from "./bubble.module.css";
+import axios from 'axios';
 
 function LoginTerminal() {
 
@@ -29,6 +30,21 @@ function LoginTerminal() {
       setShowPassword(true);
     }
   };
+
+  const submitData = () => {
+    axios.post('http://localhost:3898/signup', {
+        username: email,
+        password: password,
+        name: name
+    })
+    .then((res) => {
+        console.log(res)
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+  }
+
 
   return (
     <section id='fullScreen'>
@@ -83,7 +99,7 @@ function LoginTerminal() {
                         showPassword ? (
                             <div>
                                 <div id='processComplete'>Great. Good to GO!!</div>
-                                <div id='encryptButton'>
+                                <div onClick={submitData} id='encryptButton'>
                                     <ButtonEncrypt />
                                 </div>
                             </div>

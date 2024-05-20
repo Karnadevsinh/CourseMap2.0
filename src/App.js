@@ -5,6 +5,7 @@ import Course from './components/courses/Course';
 import SelectedCourse from './components/selectedCourse/SelectedCourse';
 import LoginTerminal from './components/login/LoginTerminal';
 import Transition from './components/selectedCourse/Transition';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
@@ -14,7 +15,16 @@ function App() {
       {/* <Home /> */}
       {/* <Course /> */}
       {/* <LoginTerminal /> */}
-      <Transition />
+      {/* <Transition /> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/course' element={<Course />} />
+          <Route path='/courseDetail' element={<SelectedCourse />} />
+          <Route path='/transition' element={<Transition />} />
+          <Route path='/signUp' element={<LoginTerminal />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
