@@ -11,6 +11,7 @@ import { FiMousePointer } from 'react-icons/fi';
 import axios from 'axios';
 import DevelopmentData from '../data/Development';
 import './courseStyle.css'
+import { useNavigate } from "react-router-dom";
 
 function Course() {
 
@@ -149,7 +150,7 @@ const TiltCard = () => {
             }}
             className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg cardBackground"
           >
-            <Card title={item.title} desc={item.headline} />
+            <Card item={item} />
           </div>
         </motion.div>
       ))}
@@ -158,7 +159,15 @@ const TiltCard = () => {
 };
 
 
-const Card = ({title, desc}) => {
+const Card = ({item}) => {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    // Navigate to another page with item object as state
+    navigate('/courseDetail', { state: { item } });
+  };
+
   return (
     <motion.div
       whileHover="hover"
@@ -181,14 +190,14 @@ const Card = ({title, desc}) => {
           {/* ₹299/
           <br />
           Month */}
-          {title}
+          {item.title}
         </span>
         <p style={{
           width: "230px",
           marginLeft: "-20px"
-        }}>{desc}</p>
+        }}>{item.headline}</p>
       </div>
-      <button className="absolute bottom-4 left-4 right-4 z-20 rounded border-2 border-white bg-white py-2 text-center font-mono font-black uppercase text-neutral-800 backdrop-blur transition-colors hover:bg-white/30 hover:text-green">
+      <button onClick={handleClick} className="absolute bottom-4 left-4 right-4 z-20 rounded border-2 border-white bg-white py-2 text-center font-mono font-black uppercase text-neutral-800 backdrop-blur transition-colors hover:bg-white/30 hover:text-green">
         Get it now
       </button>
       {/* <Background /> */}

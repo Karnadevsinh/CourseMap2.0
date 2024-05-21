@@ -9,9 +9,15 @@ import "./navbarStyle.css"
 import IconButton from '@mui/material/IconButton';
 import Fingerprint from '@mui/icons-material/Fingerprint';
 import { Link } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 
 function Navbaar() {
+    const location = useLocation();
+    const navigate = useNavigate();
+    const handleLogin = () => {
+        navigate('/login', { state: { from: window.location.pathname } });
+    }
    
     return (
         <div>
@@ -63,6 +69,7 @@ function Navbaar() {
 
                         <button
                             id='btnLogin'
+                            onClick={handleLogin}
                             className={`
                                 px-2.5 py-1 rounded-full 
                                 flex items-center gap-2 

@@ -1,51 +1,34 @@
 import React from 'react';
 import "./myCardStyle.css";
 
-function MyCard() {
+function MyCard({ item }) {
   return (
     <div className="plan">
       <div className="inner">
         <span className="pricing">
-          <span>
-            ₹49 <small>/ m</small>
-          </span>
+          <span>₹49 <small>/ m</small></span>
         </span>
         <p className="title">Professional</p>
-        <p className="info">This plan is for those who have a team already and running a large business.</p>
+        <p className="info">{item.headline}</p>
         <ul className="features">
           <li>
-            <span className="icon">
-              <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 0h24v24H0z" fill="none"></path>
-                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-              </svg>
-            </span>
-            <span><strong>20</strong> team members</span>
+            <img className='iconList' src={require('../../assets/teacher.png')} />
+            <span><strong>{item.visible_instructors[0].display_name}</strong></span>
           </li>
           <li>
-            <span className="icon">
-              <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 0h24v24H0z" fill="none"></path>
-                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-              </svg>
-            </span>
-            <span>Plan <strong>team meetings</strong></span>
+            <img className='iconList' src={require('../../assets/about.png')} />
+            <span style={{width: '300px', height: '20px', marginTop: '-20px', marginBottom: '7px'}}>{item.visible_instructors[0].job_title}</span>
           </li>
           <li>
-            <span className="icon">
-              <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 0h24v24H0z" fill="none"></path>
-                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-              </svg>
-            </span>
-            <span>File sharing</span>
+            <img className='iconList' src={require('../../assets/languages.png')} />
+            <span>{item.locale.title}</span>
           </li>
         </ul>
-        <div className="action">
+        {/* <div className="action">
           <a className="btnPlan" href="#">
             Choose plan
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );

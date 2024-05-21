@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { Link } from 'react-router-dom';
 
 function RedirectButton() {
     return (
@@ -32,13 +33,18 @@ const SpotlightButton = () => {
         );
       };
   
-      btnRef.current.addEventListener("mousemove", handleMouseMove);
-      btnRef.current.addEventListener("mouseleave", handleMouseLeave);
-  
-      return () => {
-        btnRef.current.removeEventListener("mousemove", handleMouseMove);
-        btnRef.current.removeEventListener("mouseleave", handleMouseLeave);
-      };
+      const btn = btnRef.current;
+        if (btn) {
+            btn.addEventListener('mousemove', handleMouseMove);
+            btn.addEventListener('mouseleave', handleMouseLeave);
+        }
+
+        return () => {
+            if (btn) {
+                btn.removeEventListener('mousemove', handleMouseMove);
+                btn.removeEventListener('mouseleave', handleMouseLeave);
+            }
+        };
     }, []);
   
     return (

@@ -8,33 +8,33 @@ export const HoverImageLinks = () => {
     <section className="bg-neutral-950 p-4 md:p-8">
       <div className="mx-auto max-w-5xl">
         <Link
-          heading="About"
-          subheading="Learn what we do here"
-          imgSrc="/imgs/random/11.jpg"
+          heading="Development"
+          subheading="Tech World awaits you, get truly amazing insights."
+          imgSrc={require("../../assets/2021_12_Programming-vs-Web-Development.jpg")}
+          href="/course"
+        />
+        <Link
+          heading="Business"
+          subheading="Learn to manage & grow business"
+          imgSrc={require("../../assets/Leadership-Skills.png")}
           href="#"
         />
         <Link
-          heading="Clients"
-          subheading="We work with great people"
-          imgSrc="/imgs/random/6.jpg"
+          heading="Finance"
+          subheading="Numbers are fun. Test it out!"
+          imgSrc={require("../../assets/230882b9cfc535459ddabf0fd4d3afe0.jpg")}
           href="#"
         />
         <Link
-          heading="About"
-          subheading="Learn what we do here"
-          imgSrc="/imgs/random/11.jpg"
+          heading="Marketing"
+          subheading="Showcase brilliance to  eyes of world!"
+          imgSrc={require("../../assets/What-is-marketing.jpg.webp")}
           href="#"
         />
         <Link
-          heading="About"
-          subheading="Learn what we do here"
-          imgSrc="/imgs/random/11.jpg"
-          href="#"
-        />
-        <Link
-          heading="About"
-          subheading="Learn what we do here"
-          imgSrc="/imgs/random/11.jpg"
+          heading="Lifestyle"
+          subheading="Figure out the Mindful journey."
+          imgSrc={require("../../assets/healthy-lifestyle-diet-fitness-vector-sign-shape-heart-with-multiple-icons-depicting-various-sports-vegetables-cereals-seafood-meat-fruit-sleep-weight-beverages_1284-44073.jpg.avif")}
           href="#"
         />
       </div>

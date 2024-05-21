@@ -28,7 +28,7 @@ function Home() {
             <div id='parent'>
                 <div>
                     <img
-                        src={require("../../assets/culinary-E_v2-6e570739907c900db1d47077f68e88f8.webp")}
+                        src={require("../../assets/The-Ultimate-Guide-to-Software-Development-05-scaled.webp")}
                         alt="1"
                         id='chef'
                         style={{height: "430px", width: "430px", float: "left", marginTop: "-28px", marginRight: "1px"}}
@@ -36,7 +36,7 @@ function Home() {
                 </div>
                 <div>
                     <img
-                        src={require("../../assets/illustration-C_v2-21bc412ee092cda4e77b9f17867d968f.webp")}
+                        src={require("../../assets/Lifestyle.jpg")}
                         alt="1"
                         id='design'
                         style={{height: "432px", width: "430px", float: "left", marginTop: "26rem", marginLeft: '-27rem'}}
@@ -44,7 +44,7 @@ function Home() {
                 </div>
                 <div>
                     <img
-                        src={require("../../assets/animation-A_v1-fcf969ba520abdaf742733b78c86e528.webp")}
+                        src={require("../../assets/Lead-conversions.jpg.webp")}
                         alt="1"
                         id='design'
                         style={{height: "200px", width: "270px" , float: "inline-start", marginLeft: "0.8rem"}}
@@ -73,7 +73,7 @@ function Home() {
                 </div>
                 <div>
                     <img
-                        src={require("../../assets/photography-B_v2-f7561e9e3c98901f65cbcbe06e6882eb.webp")}
+                        src={require("../../assets/Types-of-Businesses-Opener_v2-1024x777.jpeg.webp")}
                         alt="1"
                         id='design'
                         style={{height: "430px", width: "430px", float: "right", marginTop: "-7.4rem", marginLeft: "2px"}}
@@ -89,7 +89,7 @@ function Home() {
                 </div>
                 <div>
                     <img
-                        src={require("../../assets/crafts-artisanship-C_v1-3f5c4b4d8996783886894b160db2dfd5.webp")}
+                        src={require("../../assets/web-development.jpg")}
                         alt="1"
                         id='design'
                         style={{height: "248px", width: "267px", float: "left", marginTop: "25rem", marginLeft: "17px"}}
@@ -97,7 +97,7 @@ function Home() {
                 </div>
                 <div>
                     <img
-                        src={require("../../assets/creative-B_v1-a76b3dd9033a8cb879fed8c358454f3f.webp")}
+                        src={require("../../assets/immigration-integration.png.webp")}
                         alt="1"
                         id='design'
                         style={{height: "248px", width: "267px", float: "right", marginTop: "25rem", marginRight: "0.8rem"}}

@@ -7,6 +7,9 @@ import SwiperCore from 'swiper';
 // import 'swiper/swiper-bundle.min.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { useLocation, useNavigate } from "react-router-dom";
+import ReviewList from '../data/ReviewList1'
+import StarRating from './StarRating'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -17,6 +20,15 @@ import RedirectButton from './RedirectButton'
 SwiperCore.use([Pagination, EffectCoverflow]);
 
 function SelectedCourse() {
+    const location = useLocation();
+    const { item } = location.state;
+    console.log("Data Passed - ", item);
+
+    const navigate = useNavigate();
+
+    const handleBtnClick = () => {
+        navigate('/transition');
+    }
 
     useEffect(() => {
         const swiper = new SwiperCore('.mySwiper', {
@@ -44,7 +56,7 @@ function SelectedCourse() {
         <section>
             <div className='row'>
                 <div className='col-3'>
-                    <MyCard />
+                    <MyCard item={item} />
                 </div>
                 <div className='col-6'>
                     <div className='row'>
@@ -59,41 +71,48 @@ function SelectedCourse() {
                 <div className='col-3'>
                     <h3 id='courseDesc'>Course Description.</h3>
                     <div id='cardStyle'>
-                        
+                        <div className='descText'>{item.title}</div>
+                        <div className='descText'>{item.headline}</div>
                     </div>
                     <h3 id='testimonials'>Testimonials.</h3>
                     <div id='swip' className="swiper-container mySwiper">
                     <div className="swiper-wrapper">
-                    <div className="swiper-slide">
+
+                    {ReviewList.map((item) => {
+                        return(
+                        <div key={item.id} className="swiper-slide">
+                            <ReviewCard item={item} />
+                        </div>
+                        )
+                    })}
+                    {/* <div className="swiper-slide">
                     <ReviewCard />
                     </div>
                     <div className="swiper-slide">
                     <ReviewCard />
-                    </div>
-                    <div className="swiper-slide">
-                    <ReviewCard />
-                    </div>
+                    </div> */}
                     </div>
                     <div className="swiper-pagination"></div>
                     </div>
                 </div>
             </div>
         </section>
-        <div id='reviewButton'>
+        <div onClick={handleBtnClick} id='reviewButton'>
             <RedirectButton />
         </div>
     </div>
   )
 }
 
-const ReviewCard = () => {
+const ReviewCard = ({item}) => {
     return(
         <div class="cardReview">
             <div class="text">
                 <span>Reviews</span>
-                <p class="subtitle">Vivamus nisi purus</p>
+                <p style={{fontWeight: "400", marginTop: "20px", fontSize: "12px", color: "white"}} class="subtitle">{item.content}</p>
             </div>
-            <div class="icons">
+            <StarRating rating={item.rating} />
+            {/* <div class="icons">
                 <a class="btn" href="#">
                     <svg y="0" xmlns="http://www.w3.org/2000/svg" x="0" width="100" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" height="100" class="svg-icon">
                         <path stroke-width="8" stroke-linejoin="round" stroke-linecap="round" fill="none" d="M31.8,64.5a14.5,14.5,0,0,1-3.2-28.7,17.5,17.5,0,0,1-.4-4,18.2,18.2,0,0,1,36-3.6h.3a18.2,18.2,0,0,1,3.7,36M39.1,75.4,50,86.3m0,0L60.9,75.4M50,86.3V42.7">
@@ -111,7 +130,7 @@ const ReviewCard = () => {
                     </path>
                 </svg>
                 </a>
-            </div>
+            </div> */}
         </div>
     )
 }

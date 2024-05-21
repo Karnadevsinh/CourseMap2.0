@@ -151,10 +151,17 @@
     filter: blur(0rem);
   }
 
+  .descText {
+    text-align: left;
+    margin: 10px;
+    padding-top: 15px;
+    font-weight: 400;
+  }
+
 /* Review Button */
 
 #reviewButton {
     width: 300px;
-    margin-top: -390px;
-    margin-left: 30px;
+    margin-top: -380px;
+    margin-left: 140px;
 }

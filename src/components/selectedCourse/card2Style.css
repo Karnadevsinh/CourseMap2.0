@@ -35,7 +35,19 @@
   }
   
   .pricing-note {
-    opacity: 0.8;
+    font-weight: 600;
+    color: rgb(47, 50, 56);
+  }
+
+  .listIcons {
+    height: 25px;
+    width: 25px;
+  }
+
+  .crossIcon {
+    height: 22px;
+    width: 22px;
+    margin-left: 1px;
   }
   
   /*Checklist*/
@@ -44,6 +56,8 @@
     flex-direction: column;
     gap: 0.5rem;
     margin-top: 0.5rem;
+    margin-left: -15px;
+    font-weight: 400;
   }
   
   .check-list-item {

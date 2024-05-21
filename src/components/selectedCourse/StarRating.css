@@ -1,0 +1,30 @@
+.star-rating {
+    margin-top: -12px;
+    font-size: 2em;
+    color: #ffd700;
+    display: flex;
+    background-color: rgba(247, 234, 234, 0.589);
+    padding-left: 40px;
+  }
+  
+  .star {
+    position: relative;
+    display: inline-block;
+    color: #ddd; /* Empty star color */
+  }
+  
+  .star.full {
+    color: #513ece7f; /* Full star color */
+  }
+  
+  .star.half {
+    color: #513ece7f; /* Full star color for half star */
+  }
+  
+  .star.half::before {
+    content: "\2605"; /* Unicode for full star */
+    color: #ddd; /* Empty star color for half star */
+    position: absolute;
+    clip-path: inset(0 0 0 50%); /* Creates the half star effect */
+  }
+  

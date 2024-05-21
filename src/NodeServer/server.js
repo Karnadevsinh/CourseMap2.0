@@ -51,7 +51,7 @@ app.post('/signup', async (req, res) => {
 // Login endpoint
 app.post('/login', async (req, res) => {
   try {
-    const { username, password, name } = req.body;
+    const { username, password } = req.body;
     // Find the user in the database
     const user = await User.findOne({ username });
     if (!user) {

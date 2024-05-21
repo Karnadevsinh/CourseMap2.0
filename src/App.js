@@ -6,6 +6,7 @@ import SelectedCourse from './components/selectedCourse/SelectedCourse';
 import LoginTerminal from './components/login/LoginTerminal';
 import Transition from './components/selectedCourse/Transition';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SignInTerminal from './components/login/SignInTerminal';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path='/courseDetail' element={<SelectedCourse />} />
           <Route path='/transition' element={<Transition />} />
           <Route path='/signUp' element={<LoginTerminal />} />
+          <Route path='/login' element={<SignInTerminal />} />
         </Routes>
       </BrowserRouter>
     </div>
