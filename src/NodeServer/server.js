@@ -12,11 +12,13 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+const dbURI = 'mongodb://mongodb-service:27017/mydatabase';
+
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/CourseMap', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.log(err));
+  
 const db = mongoose.connection;
 
 // Define User Schema
