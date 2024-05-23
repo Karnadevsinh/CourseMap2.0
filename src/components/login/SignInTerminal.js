@@ -29,7 +29,7 @@ function SignInTerminal() {
   };
 
   const submitData = () => {
-    axios.post('http://localhost:3898/login', {
+    axios.post('http://backend-service:3898/login', {
         username: email,
         password: password
     })
