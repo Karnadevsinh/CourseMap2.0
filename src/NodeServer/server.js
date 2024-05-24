@@ -12,11 +12,13 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const dbURI = 'mongodb://mongodb-service:27017/mydatabase';
+const dbURI = 'mongodb://mongodb-service:27017/CourseMap';
 
 // Connect to MongoDB
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, serverSelectionTimeoutMS: 30000,
-socketTimeoutMS: 45000 })
+    socketTimeoutMS: 45000,
+    connectTimeoutMS: 30000,
+    family: 4 })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
