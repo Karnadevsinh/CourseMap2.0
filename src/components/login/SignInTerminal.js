@@ -31,7 +31,7 @@ function SignInTerminal() {
   };
 
   const submitData = () => {
-    axios.post(`http://${backendUrl}/login`, {
+    axios.post(`http://localhost:3898/login`, {
         username: email,
         password: password
     })
