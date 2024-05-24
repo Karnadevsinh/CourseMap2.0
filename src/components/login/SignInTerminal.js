@@ -32,7 +32,7 @@ function SignInTerminal() {
     axios.post("http://10.20.93.11:3898/login", {
         username: email,
         password: password
-    })
+    }, {timeout: "30000"})
     .then((res) => {
         console.log(res)
         const from = location.state?.from?.pathname || '/';

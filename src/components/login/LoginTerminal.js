@@ -36,7 +36,7 @@ function LoginTerminal() {
         username: email,
         password: password,
         name: name
-    })
+    },{timeout: 30000})
     .then((res) => {
         console.log(res)
     })
