@@ -4,7 +4,7 @@ import ButtonEncrypt from './ButtonEncrypt';
 import styles from "./bubble.module.css";
 import axios from 'axios';
 
-const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3898';
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 function LoginTerminal() {
 
@@ -34,7 +34,7 @@ function LoginTerminal() {
   };
 
   const submitData = () => {
-    axios.post(`http://${backendUrl}/signup`, {
+    axios.post(`${backendUrl}/signup`, {
         username: email,
         password: password,
         name: name
