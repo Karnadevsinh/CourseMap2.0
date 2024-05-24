@@ -6,6 +6,8 @@ import axios from 'axios';
 import ButtonEncryptSignIn from './ButtonEncryptSignIn';
 import { useLocation, useNavigate } from "react-router-dom";
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
 function SignInTerminal() {
 
   const [email, setEmail] = useState('');
@@ -29,7 +31,7 @@ function SignInTerminal() {
   };
 
   const submitData = () => {
-    axios.post('http://10.20.93.11:3898/login', {
+    axios.post(`http://${backendUrl}/login`, {
         username: email,
         password: password
     })
