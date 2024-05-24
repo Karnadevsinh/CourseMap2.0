@@ -12,7 +12,8 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const dbURI = 'mongodb://localhost:27017/CourseMap';
+// const dbURI = 'mongodb://localhost:27017/CourseMap';
+const dbURI = 'mongodb://mongodb-service:27017/CourseMap'
 
 // Connect to MongoDB
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, serverSelectionTimeoutMS: 30000,
