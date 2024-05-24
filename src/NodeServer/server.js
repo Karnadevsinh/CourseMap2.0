@@ -15,10 +15,11 @@ app.use(bodyParser.json());
 const dbURI = 'mongodb://mongodb-service:27017/mydatabase';
 
 // Connect to MongoDB
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, serverSelectionTimeoutMS: 30000,
+socketTimeoutMS: 45000 })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
-  
+
 const db = mongoose.connection;
 
 // Define User Schema
