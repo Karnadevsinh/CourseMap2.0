@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-deployment1
+  name: backend-deployment
 spec:
   # Check Revision History Limit
   # Check if we can increase the number of replicas
@@ -30,12 +30,12 @@ spec:
         - name: PORT
           valueFrom:
             configMapKeyRef:
-              name: coursemap-backend-configmap1
+              name: coursemap-backend-configmap
               key: PORT
         - name: MONGO_URI
           valueFrom:
             configMapKeyRef:
-              name: coursemap-backend-configmap1
+              name: coursemap-backend-configmap
               key: MONGO_URI
       imagePullSecrets:
       - name: my-registry-secret

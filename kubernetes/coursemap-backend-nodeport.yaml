@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: coursemap-backend-nodeport1
+  name: coursemap-backend-nodeport
 spec:
   type: NodePort
   selector:
