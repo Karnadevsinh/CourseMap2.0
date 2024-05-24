@@ -29,7 +29,7 @@ function SignInTerminal() {
   };
 
   const submitData = () => {
-    axios.post("http://10.20.85.211:5000/login", {
+    axios.post("http://34.29.191.149:31995/login", {
         username: email,
         password: password
     }, {timeout: "30000"})
