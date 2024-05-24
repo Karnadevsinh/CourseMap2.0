@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: coursemap-backend-deployment
+spec:
+  # Check Revision History Limit
+  # Check if we can increase the number of replicas
+  # Check if we can use a different strategy for rolling updates
+  replicas: 1
+  selector:
+    matchLabels:
+      app: coursemap-backend
+  template:
+    metadata:
+      labels:
+        app: coursemap-backend
+    spec:
+      containers:
+      - name: backend
+        image: hemantkumarcpersonal/backend:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "300m"
+        ports:
+        - name: http
+          containerPort: 5000
+        imagePullPolicy: Always
+        env:
+        - name: PORT
+          valueFrom:
+            configMapKeyRef:
+              name: coursemap-backend-configmap
+              key: PORT
+        - name: MONGO_URI
+          valueFrom:
+            configMapKeyRef:
+              name: coursemap-backend-configmap
+              key: MONGO_URI
+      imagePullSecrets:
+      - name: my-registry-secret
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: coursemap-backend-service
+spec:
+  selector:
+    app: coursemap-backend
+  ports:
+  - name: http
+    port: 5000
+    targetPort: 5000
