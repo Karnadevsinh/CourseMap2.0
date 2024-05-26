@@ -3,8 +3,12 @@ import './terminalStyle.css'
 import ButtonEncrypt from './ButtonEncrypt';
 import styles from "./bubble.module.css";
 import axios from 'axios';
+import { useLocation, useNavigate } from "react-router-dom";
 
 function LoginTerminal() {
+
+    const navigate = useNavigate();
+    const location = useLocation();
 
   const [email, setEmail] = useState('');
   const [showEmail, setShowEmail] = useState(false);
@@ -32,13 +36,16 @@ function LoginTerminal() {
   };
 
   const submitData = () => {
-    axios.post("http://10.20.85.211:5000/signup", {
+    axios.post("http://localhost:3898/signup", {
         username: email,
         password: password,
         name: name
     },{timeout: 30000})
     .then((res) => {
+        window.localStorage.setItem('isLoggedIn', 'true')
+        window.localStorage.setItem('user', name)
         console.log(res)
+        navigate('/')
     })
     .catch((error) => {
         console.log(error)
@@ -50,16 +57,16 @@ function LoginTerminal() {
     <section id='fullScreen'>
         <div className="terminal-window">
         <div className="top-bar">
-            <div className="button red"></div>
-            <div className="button yellow"></div>
-            <div className="button green"></div>
+            <div className="buttonn red"></div>
+            <div className="buttonn yellow"></div>
+            <div className="buttonn green"></div>
         </div>
         <div className="content">
             {/* Your terminal content goes here */}
             <div id='titleText' className="grid h-screen place-content-center">
             <BubbleText />
             </div>
-            <p>Hey there! We're excited to link</p>
+            <p style={{marginTop: '20px'}}>Hey there! We're excited to link</p>
         </div>
 
         <div id='emailInput' className='row'>
@@ -155,7 +162,7 @@ function LoginTerminal() {
             <div className='col-1'>
                 <img id='tildeIcon' src={require('../../assets/tilde-3.png')} />
             </div>
-            <div id='enterEmail' className='col-8'>Enter Email:
+            <div id='enterEmail' className='col-10'>Enter Email:
                 <input 
                 type="text" 
                 id="emailInputField" 

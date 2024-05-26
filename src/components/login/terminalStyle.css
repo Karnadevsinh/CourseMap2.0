@@ -20,7 +20,7 @@
     padding: 0 10px;
   }
   
-  .button {
+  .buttonn {
     width: 12px;
     height: 12px;
     border-radius: 50%;
@@ -82,7 +82,7 @@
 
   #enterEmail {
     color: rgb(181, 226, 228);
-    margin-left: -100px;
+    margin-left: -150px !important;
     margin-top: -5px;
   }
 
@@ -102,6 +102,7 @@
     background-color: #2d2d2d00;
     margin-left: 4px;
     color: aliceblue;
+    width: 200px;
   }
 
   input {
@@ -122,13 +123,13 @@
   #preName {
     color: white;
     margin-top: 15px;
-    margin-left: -12px;
+    margin-left: -12px !important;
   }
 
   #userName {
     color: rgb(161, 161, 238);
     margin-top: 15px;
-    margin-left: -62px;
+    margin-left: -62px !important;
     font-weight: 500;
   }
 
@@ -201,10 +202,10 @@
   }
 
   #encryptButton {
-    margin-top: -70px;
+    margin-top: -70px !important;
   }
 
   #titleText {
-    margin-top: -350px;
-    margin-bottom: -350px;
+    margin-top: -340px;
+    margin-bottom: -340px;
   }

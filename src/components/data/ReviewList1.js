@@ -49,3 +49,5 @@ const ReviewList = [
 ]
 
   export default ReviewList;
+
+  export const reviewSentiments = ["perfect", "clear", "smooth"]

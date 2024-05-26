@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 function RedirectButton() {
     return (
-        <div className="flex min-h-[200px] items-center justify-center px-4"
-            style={{background: 'lavender'}}
+        <div className="flex min-h-[75px] items-center justify-center px-4"
+            style={{background: 'lavender', height: '150px !important'}}
         >
           <SpotlightButton />
         </div>

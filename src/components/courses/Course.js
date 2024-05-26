@@ -12,6 +12,7 @@ import axios from 'axios';
 import DevelopmentData from '../data/Development';
 import './courseStyle.css'
 import { useNavigate } from "react-router-dom";
+import UdacityDevelopmentData from '../data/DevelopmentUdacity';
 
 function Course() {
 
@@ -46,6 +47,9 @@ function Course() {
       <section>
         <div className="grid w-full place-content-center bg-gradient-to-br from-indigo-500 to-violet-500 px-4 py-12 text-slate-900">
           <TiltCard />
+          <div style={{marginTop: '120px'}}>
+          <TiltCardU />
+          </div>
         </div>
       </section>
     </div>
@@ -158,6 +162,70 @@ const TiltCard = () => {
   );
 };
 
+const TiltCardU = () => {
+  const [hoverStatesU, setHoverStatesU] = useState(Array(DevelopmentData.length).fill(false));
+
+  const handleMouseMove = (index, e) => {
+    const rect = cardRefs.current[index].getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+
+    const mouseX = (e.clientX - rect.left) * ROTATION_RANGE;
+    const mouseY = (e.clientY - rect.top) * ROTATION_RANGE;
+
+    const rX = (mouseY / height - HALF_ROTATION_RANGE) * -1;
+    const rY = mouseX / width - HALF_ROTATION_RANGE;
+
+    const newHoverStates = [...hoverStatesU];
+    newHoverStates[index] = { x: rX, y: rY };
+    setHoverStatesU(newHoverStates);
+  };
+
+  const handleMouseLeave = (index) => {
+    const newHoverStates = [...hoverStatesU];
+    newHoverStates[index] = false;
+    setHoverStatesU(newHoverStates);
+  };
+
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    cardRefs.current = Array(DevelopmentData.length)
+      .fill()
+      .map((_, i) => cardRefs.current[i]);
+  }, [DevelopmentData.length]);
+
+  return (
+    <div className="grid gap-32 grid-cols-3">
+
+      {UdacityDevelopmentData.map((item, index) => (
+              <motion.div
+                key={index}
+                ref={(ref) => (cardRefs.current[index] = ref)}
+                onMouseMove={(e) => handleMouseMove(index, e)}
+                onMouseLeave={() => handleMouseLeave(index)}
+                className="relative h-96 w-72 rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300"
+                style={{
+                  transformStyle: 'preserve-3d',
+                  transform: hoverStatesU[index] && `rotateX(${hoverStatesU[index].x}deg) rotateY(${hoverStatesU[index].y}deg)`,
+                  transition: 'transform 0.3s ease',
+                }}
+              >
+                <div
+                  style={{
+                    transform: 'translateZ(75px)',
+                    transformStyle: 'preserve-3d',
+                  }}
+                  className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg cardBackground"
+                >
+                  <CardU item={item} />
+                </div>
+              </motion.div>
+            ))}
+    </div>
+  );
+};
+
 
 const Card = ({item}) => {
 
@@ -184,7 +252,7 @@ const Card = ({item}) => {
     >
       <div className="relative z-10 text-white">
         <span className="mb-3 block w-fit rounded-full bg-white/30 px-3 py-0.5 text-sm font-light text-white">
-          Pro
+          Udemy
         </span>
         <span className="my-2 block origin-top-left font-mono text-xl font-black leading-[1.2] titleText">
           {/* ₹299/
@@ -205,62 +273,54 @@ const Card = ({item}) => {
   );
 };
 
-const Background = () => {
+const CardU = ({item}) => {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    // Navigate to another page with item object as state
+    navigate('/courseDetail', { state: { item } });
+  };
+
+  const handleClickU = () => {
+    // Navigate to another page with item object as state
+    navigate('/udacitySelected', { state: { item } });
+  };
+
   return (
-    <motion.svg
-      width="250"
-      height="384"
-      viewBox="0 0 320 384"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="absolute inset-0 z-0"
-      variants={{
-        hover: {
-          scale: 1.5,
-        },
-      }}
+    <motion.div
+      whileHover="hover"
       transition={{
         duration: 1,
         ease: 'backInOut',
       }}
+      variants={{
+        hover: {
+          scale: 1.05,
+        },
+      }}
+      className="relative h-90 w-65 shrink-0 overflow-hidden rounded-xl bg-indigo-500 p-8 cardBackground"
     >
-      <motion.circle
-        variants={{
-          hover: {
-            scaleY: 0.5,
-            y: -25,
-          },
-        }}
-        transition={{
-          duration: 1,
-          ease: 'backInOut',
-          delay: 0.2,
-        }}
-        cx="160.5"
-        cy="114.5"
-        r="101.5"
-        fill="#262626"
-      />
-      <motion.ellipse
-        variants={{
-          hover: {
-            scaleY: 2.25,
-            y: -25,
-          },
-        }}
-        transition={{
-          duration: 1,
-          ease: 'backInOut',
-          delay: 0.2,
-        }}
-        cx="160.5"
-        cy="265.5"
-        rx="101.5"
-        ry="43.5"
-        fill="#262626"
-      />
-    </motion.svg>
+      <div className="relative z-10 text-white">
+        <span className="mb-3 block w-fit rounded-full bg-white/30 px-3 py-0.5 text-sm font-light text-white">
+          Udacity
+        </span>
+        <span className="my-2 block origin-top-left font-mono text-xl font-black leading-[1.2] titleText">
+          {/* ₹299/
+          <br />
+          Month */}
+          {item.title}
+        </span>
+        <p style={{
+          width: "230px",
+          marginLeft: "-20px"
+        }}>{item.description}</p>
+      </div>
+      <button onClick={handleClickU} className="absolute bottom-4 left-4 right-4 z-20 rounded border-2 border-white bg-white py-2 text-center font-mono font-black uppercase text-neutral-800 backdrop-blur transition-colors hover:bg-white/30 hover:text-green">
+        Get it now
+      </button>
+      {/* <Background /> */}
+    </motion.div>
   );
 };
-
 export default Course;

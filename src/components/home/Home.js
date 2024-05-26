@@ -60,7 +60,7 @@ function Home() {
                 </div>
                 <div style={{height: "80px"}}>
                     <div style={{paddingTop: "13.4rem"}}>
-                        <div style={{backgroundColor: "white", width: "544px", height: "370px", marginLeft: "28rem"}}>
+                        <div style={{backgroundColor: "white", width: "544px", height: "364px", marginLeft: "28rem"}}>
                             <div id='para' style={{paddingTop: "173px"}}>
                             <p id='titleName'>CourseMap</p>
                                 <aside></aside>

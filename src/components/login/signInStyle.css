@@ -80,7 +80,7 @@
     font-weight: 500;
   }
 
-  #enterEmail {
+  #enterEmaill {
     color: rgb(181, 226, 228);
     margin-left: -100px;
     margin-top: -5px;
@@ -119,16 +119,16 @@
     color: white;
   }
 
-  #preName {
+  #preNamee {
     color: white;
     margin-top: 15px;
-    margin-left: 7px;
+    margin-left: -15px;
   }
 
-  #userName {
+  #userNamee {
     color: skyblue;
     margin-top: 15px;
-    margin-left: -27px;
+    margin-left: -53px;
     font-weight: 500;
   }
 
@@ -173,9 +173,9 @@
     font-family: Andale Mono;
   }
 
-  #enterPassword {
+  #enterPasswordd {
     color: rgb(181, 226, 228);
-    margin-left: -85px;
+    margin-left: -95px;
     margin-top: -4px;
   }
 
@@ -204,7 +204,7 @@
     margin-top: -30px;
   }
 
-  #titleText {
-    margin-top: -350px;
-    margin-bottom: -350px;
+  #titleTextt {
+    margin-top: -330px;
+    margin-bottom: -330px;
   }

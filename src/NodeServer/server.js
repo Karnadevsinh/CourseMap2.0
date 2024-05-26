@@ -12,8 +12,8 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// const dbURI = 'mongodb://localhost:27017/CourseMap';
-const dbURI = 'mongodb://mongodb-service:27017/CourseMap'
+const dbURI = 'mongodb://localhost:27017/CourseMap';
+// const dbURI = 'mongodb://mongodb-service:27017/CourseMap'
 
 // Connect to MongoDB
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, serverSelectionTimeoutMS: 30000,
@@ -67,7 +67,7 @@ app.post('/login', async (req, res) => {
     if (user.password !== password) {
       return res.status(401).send('Incorrect password');
     }
-    res.status(200).send('Login successful');
+    res.status(200).json({ message: 'Login successful', username: user.name });
   } catch (error) {
     console.error(error);
     res.status(500).send('Error logging in');

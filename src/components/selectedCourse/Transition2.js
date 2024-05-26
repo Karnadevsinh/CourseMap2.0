@@ -2,22 +2,21 @@ import React, {useEffect} from 'react'
 import './transitionStyle.css'
 import { useLocation, useNavigate } from "react-router-dom";
 
-function Transition() {
-	const location = useLocation();
+function Transition2() {
+    const location = useLocation();
     const { item } = location.state;
-	console.log("Item", item)
-	useEffect(() => {
+	console.log("Item2", item)
+    useEffect(() => {
 		const timer = setTimeout(() => {
-		  window.location.href = `https://www.udemy.com${item.url}`; // Replace with your target URL
-		}, 2800); // 4000 milliseconds = 4 seconds
+		  window.location.href = `${item.url}`; 
+		}, 2800); 
 	
 		return () => clearTimeout(timer); // Cleanup the timer on component unmount
 	  }, []);
-
   return (
     <div id='groundElement'>
             <h1 id='t1'>Now you are leaving <span id='courseMapTitle'>CourseMap</span></h1>
-            <h3 id='t2'>You would be redirected to <span id='targetPage'>Udemy</span></h3>
+            <h3 id='t2'>You would be redirected to <span id='targetPage'>Udacity</span></h3>
             <div class="progress-loader">
                 <div class="progress"></div>
             </div>
@@ -92,4 +91,4 @@ function Transition() {
   )
 }
 
-export default Transition
+export default Transition2

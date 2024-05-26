@@ -29,11 +29,14 @@ function SignInTerminal() {
   };
 
   const submitData = () => {
-    axios.post("http://10.20.85.211:5000/login", {
+    axios.post("http://localhost:3898/login", {
         username: email,
         password: password
     }, {timeout: "30000"})
     .then((res) => {
+        console.log(res)
+        window.localStorage.setItem('isLoggedIn', 'true')
+        window.localStorage.setItem('user', res.data.username)
         console.log(res)
         const from = location.state?.from?.pathname || '/';
         navigate(from);
@@ -54,7 +57,7 @@ function SignInTerminal() {
         </div>
         <div className="content">
             {/* Your terminal content goes here */}
-            <div id='titleText' className="grid h-screen place-content-center">
+            <div id='titleTextt' className="grid h-screen place-content-center">
             <BubbleText />
             </div>
             <p>Hey there! We're excited to link</p>
@@ -75,8 +78,8 @@ function SignInTerminal() {
                 </div>
 
                 <div className='row'>
-                <div className='col-4' id='preName'>Awesome, please provide</div>
-                <div className='col-3' id='userName'>your password?</div>
+                <div className='col-5' id='preNamee'>Awesome, please provide</div>
+                <div className='col-3' id='userNamee'>your password?</div>
                 </div>
 
                 {
@@ -96,7 +99,7 @@ function SignInTerminal() {
                         <div className='col-1'>
                             <img id='tildeIcon' src={require('../../assets/tilde-3.png')} />
                         </div>
-                        <div id='enterPassword' className='col-8'>Enter Password:
+                        <div id='enterPasswordd' className='col-8'>Enter Password:
                             <input 
                                 type="text" 
                                 id="emailNameField" 
@@ -117,7 +120,7 @@ function SignInTerminal() {
             <div className='col-1'>
                 <img id='tildeIcon' src={require('../../assets/tilde-3.png')} />
             </div>
-            <div id='enterEmail' className='col-8'>Enter Email:
+            <div id='enterEmaill' className='col-8'>Enter Email:
                 <input 
                 type="text" 
                 id="emailInputField" 

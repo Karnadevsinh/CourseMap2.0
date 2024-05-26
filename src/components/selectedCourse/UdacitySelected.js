@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Navbaar from '../navbar/Navbaar'
 import MyCard from './MyCard'
 import Card2 from './Card2'
-import './selectedCourseStyle.css'
+import './udacityStyle.css'
 import SwiperCore from 'swiper';
 // import 'swiper/swiper-bundle.min.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -19,19 +19,20 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import RedirectButton from './RedirectButton'
 import Payment from './Payment'
+import MyCardU from './MyCardU'
+import UdacityDevelopmentData from '../data/DevelopmentUdacity'
 
 SwiperCore.use([Pagination, EffectCoverflow]);
 
-function SelectedCourse() {
+function UdacitySelected() {
     const location = useLocation();
     const { item } = location.state;
     console.log("Data Passed - ", item);
-    const courseObj = location.state
 
     const navigate = useNavigate();
 
     const handleBtnClick = () => {
-        navigate('/transition', {state: {item}});
+        navigate('/transition2', {state: {item}});
     }
 
     const handleMembership = () => {
@@ -70,7 +71,7 @@ function SelectedCourse() {
         <section>
             <div style={{marginTop: '-25px'}} className='row'>
                 <div className='col-3'>
-                    <MyCard item={item} />
+                    <MyCardU item={item} />
                 </div>
                 <div className='col-6'>
                     <div className='row'>
@@ -86,14 +87,17 @@ function SelectedCourse() {
                     <h3 id='courseDesc'>Course Description.</h3>
                     <div id='cardStyle'>
                         <div className='descText'>{item.title}</div>
-                        <div className='descText'>{item.headline}</div>
+                        <div className='descText1'>{item.description}</div>
+                        <div className='descText1'>{item.prerequisites}</div>
+                        <div className='descText1'>{item.skills_learnt}</div>
                     </div>
 
                     <h3 id='testimonials'>Testimonials.</h3>
                     <div className='testimonials-container'>
-                        {reviewSentiments.map((keyword) => {
+                        {
+                        item.sentiments.map((item) => {
                             return(
-                                <h4><Badge className='badgeColor'>{keyword}</Badge></h4>
+                                <h4><Badge className='badgeColor'>{item}</Badge></h4>
                             )
                         })}
                     </div>
@@ -101,11 +105,11 @@ function SelectedCourse() {
                     <div id='swip' className="swiper-container mySwiper">
                     <div className="swiper-wrapper">
 
-                    {ReviewList.map((item) => {
+                    {item.reviews.slice(0, 10).map((review) => {
                         return(
-                        <div key={item.id} className="swiper-slide">
-                            <ReviewCard item={item} />
-                        </div>
+                            <div key={review.id} className="swiper-slide">
+                                <ReviewCard reviewContent={review.content} />
+                            </div>
                         )
                     })}
                     {/* <div className="swiper-slide">
@@ -133,14 +137,14 @@ function SelectedCourse() {
   )
 }
 
-const ReviewCard = ({item}) => {
+const ReviewCard = ({reviewContent}) => {
     return(
         <div class="cardReview">
             <div class="text">
                 <span>Reviews</span>
-                <p style={{fontWeight: "400", marginTop: "20px", fontSize: "12px", color: "white"}} class="subtitle">{item.content}</p>
+                <p style={{fontWeight: "400", marginTop: "20px", fontSize: "12px", color: "white"}} class="subtitle">{reviewContent}</p>
             </div>
-            <StarRating rating={item.rating} />
+            {/* <StarRating rating={item.rating} /> */}
             {/* <div class="icons">
                 <a class="btn" href="#">
                     <svg y="0" xmlns="http://www.w3.org/2000/svg" x="0" width="100" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" height="100" class="svg-icon">
@@ -164,4 +168,4 @@ const ReviewCard = ({item}) => {
     )
 }
 
-export default SelectedCourse
+export default UdacitySelected

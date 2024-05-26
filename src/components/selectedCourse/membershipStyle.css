@@ -1,0 +1,18 @@
+#memParent {
+    background: url(../../assets/Contactless-Payment.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    /* margin-top: -55px; */
+}
+
+#memContainer {
+  max-width: 500px;
+  /* margin: 0px auto; */
+  top: 70px;
+  left: 150px;
+  padding: 20px;
+  background: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
